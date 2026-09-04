@@ -17,6 +17,14 @@
         app:layout_constraintTop_toBottomOf="@id/menu"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/test_user_image" />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="30dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="@id/user_image"
+        app:layout_constraintBottom_toBottomOf="@id/user_image"
+        app:layout_constraintStart_toEndOf="@id/user_image"
+        app:layout_constraintEnd_toStartOf="@id/user_name"/>
     <TextView
         android:id="@+id/user_name"
         android:layout_width="wrap_content"
