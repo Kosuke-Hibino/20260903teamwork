@@ -1,5 +1,6 @@
 package jp.ac.meijou.android.a20260903teamwork;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -26,5 +27,18 @@ public class CreatePost extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // 【演習1】明示的Intent：起動先Activityのクラスを直接指定して遷移する
+        // new Intent(コンテキスト, 起動先Activity.class) の形で Intent オブジェクトを作成する
+
+        // 投稿ボタン、検索画面に遷移
+        binding.PostButton.setOnClickListener(view -> {
+            var intent = new Intent(this, SearchResult.class);
+            startActivity(intent);
+            finish();
+        });
+
+
+
     }
 }
