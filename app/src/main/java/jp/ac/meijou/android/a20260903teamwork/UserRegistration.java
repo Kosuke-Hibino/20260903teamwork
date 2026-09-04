@@ -26,10 +26,5 @@ public class UserRegistration extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        // 検索画面への遷移
-        binding.displayPostButton.setOnClickListener(view -> {
-            var intent = new Intent(this, SearchResult.class);
-            startActivity(intent);
-        });
     }
 }

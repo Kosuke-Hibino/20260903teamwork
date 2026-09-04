@@ -1,5 +1,7 @@
+
 package jp.ac.meijou.android.a20260903teamwork;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -38,5 +40,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //コピーここまで
+
+
+        // 画面遷移コピペ用
+
+        // ユーザー登録画面に遷移
+        binding.buttonMenu3.setOnClickListener(view -> {
+            var intent = new Intent(this, UserRegistration.class);
+            startActivity(intent);
+        });
+
+        // 検索画面に遷移
+        binding.buttonMenu4.setOnClickListener(view -> {
+            var intent = new Intent(this, SearchResult.class);
+            startActivity(intent);
+        });
+
+        // 投稿作成画面に遷移
+        binding.buttonMenu5.setOnClickListener(view -> {
+            var intent = new Intent(this, CreatePost.class);
+            startActivity(intent);
+        });
+
+        // 戻る
+        binding.buttonMenu1.setOnClickListener(view -> {
+            finish();
+        });
+
     }
 }
