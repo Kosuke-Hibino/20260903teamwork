@@ -9,13 +9,17 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import jp.ac.meijou.android.a20260903teamwork.databinding.ActivitySearchResultBinding;
+import jp.ac.meijou.android.a20260903teamwork.databinding.ActivityUserRegistrationBinding;
+
 public class UserRegistration extends AppCompatActivity {
 
+    private ActivityUserRegistrationBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        binding = ActivityDisplayPostBinding.inflate(getLayoutInflater());
+        binding = ActivityUserRegistrationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

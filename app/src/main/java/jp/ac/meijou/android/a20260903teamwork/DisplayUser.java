@@ -1,6 +1,7 @@
 package jp.ac.meijou.android.a20260903teamwork;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -9,7 +10,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import jp.ac.meijou.android.a20260903teamwork.databinding.ActivityDisplayPostBinding;
+import jp.ac.meijou.android.a20260903teamwork.databinding.ActivityDisplayUserBinding;
+
 public class DisplayUser extends AppCompatActivity {
+
+    private ActivityDisplayUserBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
