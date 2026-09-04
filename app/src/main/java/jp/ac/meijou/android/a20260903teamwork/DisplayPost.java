@@ -63,6 +63,7 @@ public class DisplayPost extends AppCompatActivity {
             var intent = new Intent(this, DisplayUser.class);
             startActivity(intent);
         });
+
         // 戻る
         binding.buttonMenu1.setOnClickListener(view -> {
             finish();
