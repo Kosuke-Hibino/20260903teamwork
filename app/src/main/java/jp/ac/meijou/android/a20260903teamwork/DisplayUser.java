@@ -1,5 +1,6 @@
 package jp.ac.meijou.android.a20260903teamwork;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -8,7 +9,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import jp.ac.meijou.android.a20260903teamwork.databinding.ActivityDisplayPostBinding;
+import jp.ac.meijou.android.a20260903teamwork.databinding.ActivityDisplayUserBinding;
+
 public class DisplayUser extends AppCompatActivity {
+
+    private ActivityDisplayUserBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +26,13 @@ public class DisplayUser extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // 投稿表示画面への遷移
+        binding.displayPostButton.setOnClickListener(view -> {
+            var intent = new Intent(this, DisplayPost.class);
+            startActivity(intent);
+            finish();
+        });
+
     }
 }
