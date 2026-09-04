@@ -29,11 +29,11 @@ public class DisplayUser extends AppCompatActivity {
         });
 
         // 他のSNSアカウントへの遷移(IDは仮:IDが決まって、修正した場合はこれを消してください)
-        binding.toXAccountButton.setOnClickListener(view -> {
-            var intent = new Intent();
-            intent.setAction(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("https://x.com"));
-            startActivity(intent);
-        });
+//        binding.toXAccountButton.setOnClickListener(view -> {
+//            var intent = new Intent();
+//            intent.setAction(Intent.ACTION_VIEW);
+//            intent.setData(Uri.parse("https://x.com"));
+//            startActivity(intent);
+//        });
     }
 }

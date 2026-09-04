@@ -63,5 +63,11 @@ public class CreatePost extends AppCompatActivity {
         binding.buttonMenu1.setOnClickListener(view -> {
             finish();
         });
+
+        // 検索画面に遷移
+        binding.postButton.setOnClickListener(view -> {
+            var intent = new Intent(this, SearchResult.class);
+            startActivity(intent);
+        });
     }
 }
