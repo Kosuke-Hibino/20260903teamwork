@@ -5,9 +5,15 @@ import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import jp.ac.meijou.android.a20260903teamwork.databinding.ActivityCreatePostBinding;
 import jp.ac.meijou.android.a20260903teamwork.databinding.ActivityDisplayPostBinding;
@@ -28,5 +34,35 @@ public class SearchResult extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        binding.buttonMenu2.setOnClickListener(view -> {
+            var visibility = binding.menu2.getVisibility();
+            if (visibility == 8) {
+                binding.menu2.setVisibility(0);
+                binding.buttonMenu2.setText("閉じる");
+            } else {
+                binding.menu2.setVisibility(8);
+                binding.buttonMenu2.setText("メニュー");
+            }
+        });
+
+        List<SerachItem> items = new ArrayList<>();
+        items.add(new SerachItem(
+                R.drawable.top1,
+                R.drawable.user1,
+                "Aさん",
+                "123"
+        ));
+        items.add(new SerachItem(
+                R.drawable.top2,
+                R.drawable.user2,
+                "Bさん",
+                "ABC"
+        ));
+
+        RecyclerView  recyclerView = findViewById(R.id.main);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        SearchAdapter adapter = new SearchAdapter(items);
+        recyclerView.setAdapter(adapter);
     }
 }
