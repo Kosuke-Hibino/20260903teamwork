@@ -58,6 +58,10 @@ public class DisplayPost extends AppCompatActivity {
             startActivity(intent);
         });
 
+        // ユーザ情報画面への遷移(IDは仮:IDが決まって、修正した場合はこれを消してください)
+        binding.displayUserButton.setOnClickListener(view -> {
+           var intent = new Intent(this, DisplayUser.class);
+           startActivity(intent);
         // 戻る
         binding.buttonMenu1.setOnClickListener(view -> {
             finish();
