@@ -1,6 +1,7 @@
 package jp.ac.meijou.android.a20260903teamwork;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -25,6 +26,14 @@ public class DisplayUser extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        // 他のSNSアカウントへの遷移(IDは仮:IDが決まって、修正した場合はこれを消してください)
+        binding.toXAccountButton.setOnClickListener(view -> {
+            var intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("https://x.com"));
+            startActivity(intent);
         });
     }
 }
