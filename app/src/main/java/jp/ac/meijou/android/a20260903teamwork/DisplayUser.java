@@ -26,13 +26,5 @@ public class DisplayUser extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        // 投稿表示画面への遷移
-        binding.displayPostButton.setOnClickListener(view -> {
-            var intent = new Intent(this, DisplayPost.class);
-            startActivity(intent);
-            finish();
-        });
-
     }
 }

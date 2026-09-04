@@ -27,20 +27,5 @@ public class DisplayPost extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        // ユーザー登録画面への遷移
-        binding.userRegistrationButton.setOnClickListener(view -> {
-            var intent = new Intent(this, UserRegistration.class);
-            startActivity(intent);
-        });
-        // 検索画面への遷移
-        binding.displayPostButton.setOnClickListener(view -> {
-            var intent = new Intent(this, SearchResult.class);
-            startActivity(intent);
-        });
-        // 投稿作成画面への遷移
-        binding.createPostButton.setOnClickListener(view -> {
-            var intent = new Intent(this, CreatePost.class);
-            startActivity(intent);
-        });
     }
 }
