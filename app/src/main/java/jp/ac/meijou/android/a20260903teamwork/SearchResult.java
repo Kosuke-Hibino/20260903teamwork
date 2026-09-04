@@ -29,8 +29,6 @@ public class SearchResult extends AppCompatActivity {
             return insets;
         });
 
-        // 【演習1】明示的Intent：起動先Activityのクラスを直接指定して遷移する
-        // new Intent(コンテキスト, 起動先Activity.class) の形で Intent オブジェクトを作成する
         // ユーザー登録画面への遷移
         binding.userRegistrationButton.setOnClickListener(view -> {
             var intent = new Intent(this, UserRegistration.class);
