@@ -35,7 +35,6 @@ public class CreatePost extends AppCompatActivity {
         binding.PostButton.setOnClickListener(view -> {
             var intent = new Intent(this, SearchResult.class);
             startActivity(intent);
-            finish();
         });
 
 
