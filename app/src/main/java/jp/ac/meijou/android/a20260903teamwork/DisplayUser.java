@@ -21,19 +21,48 @@ public class DisplayUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_display_user);
+        binding = ActivityDisplayPostBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        // 他のSNSアカウントへの遷移(IDは仮:IDが決まって、修正した場合はこれを消してください)
-        binding.toXAccountButton.setOnClickListener(view -> {
-            var intent = new Intent();
-            intent.setAction(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("https://x.com"));
+        //メニューバーの表示切り替え
+        binding.buttonMenu2.setOnClickListener(view -> {
+            var visibility = binding.menu2.getVisibility();
+            if (visibility == 8) {
+                binding.menu2.setVisibility(0);
+                binding.buttonMenu2.setText("閉じる");
+            } else {
+                binding.menu2.setVisibility(8);
+                binding.buttonMenu2.setText("メニュー");
+            }
+        });
+
+
+        // ユーザー登録画面に遷移
+        binding.buttonMenu3.setOnClickListener(view -> {
+            var intent = new Intent(this, UserRegistration.class);
             startActivity(intent);
+        });
+
+        // 検索画面に遷移
+        binding.buttonMenu4.setOnClickListener(view -> {
+            var intent = new Intent(this, SearchResult.class);
+            startActivity(intent);
+        });
+
+        // 投稿作成画面に遷移
+        binding.buttonMenu5.setOnClickListener(view -> {
+            var intent = new Intent(this, CreatePost.class);
+            startActivity(intent);
+        });
+
+        // 戻る
+        binding.buttonMenu1.setOnClickListener(view -> {
+            finish();
         });
     }
 }
