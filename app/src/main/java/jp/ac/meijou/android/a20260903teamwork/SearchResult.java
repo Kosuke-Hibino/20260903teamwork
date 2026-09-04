@@ -84,8 +84,12 @@ public class SearchResult extends AppCompatActivity {
         });
 
         // 戻る
+        //テスト用ボタンに書き換えます
         binding.buttonMenu1.setOnClickListener(view -> {
-            finish();
+            var intent = new Intent(this, DisplayPost.class);
+            startActivity(intent);
         });
+
+
     }
 }
