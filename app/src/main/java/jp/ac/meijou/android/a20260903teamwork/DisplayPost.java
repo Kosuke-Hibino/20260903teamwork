@@ -40,6 +40,12 @@ public class DisplayPost extends AppCompatActivity {
             }
         });
 
+        //ユーザー表示画面に遷移
+        binding.userImage.setOnClickListener(view -> {
+            var intent = new Intent(this, DisplayUser.class);
+            startActivity(intent);
+        });
+
         // ユーザー登録画面に遷移
         binding.buttonMenu3.setOnClickListener(view -> {
             var intent = new Intent(this, UserRegistration.class);
