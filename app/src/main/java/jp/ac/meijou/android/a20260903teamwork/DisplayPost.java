@@ -27,20 +27,26 @@ public class DisplayPost extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        // ユーザー登録画面への遷移
+        // ユーザー登録画面への遷移(IDは仮:IDが決まって、修正した場合はこれを消してください)
         binding.userRegistrationButton.setOnClickListener(view -> {
             var intent = new Intent(this, UserRegistration.class);
             startActivity(intent);
         });
-        // 検索画面への遷移
+        // 検索画面への遷移(IDは仮:IDが決まって、修正した場合はこれを消してください)
         binding.displayPostButton.setOnClickListener(view -> {
             var intent = new Intent(this, SearchResult.class);
             startActivity(intent);
         });
-        // 投稿作成画面への遷移
+        // 投稿作成画面への遷移(IDは仮:IDが決まって、修正した場合はこれを消してください)
         binding.createPostButton.setOnClickListener(view -> {
             var intent = new Intent(this, CreatePost.class);
             startActivity(intent);
+        });
+
+        // ユーザ情報画面への遷移(IDは仮:IDが決まって、修正した場合はこれを消してください)
+        binding.displayUserButton.setOnClickListener(view -> {
+           var intent = new Intent(this, DisplayUser.class);
+           startActivity(intent);
         });
     }
 }
