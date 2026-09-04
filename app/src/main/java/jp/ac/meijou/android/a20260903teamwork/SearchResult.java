@@ -64,5 +64,28 @@ public class SearchResult extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         SearchAdapter adapter = new SearchAdapter(items);
         recyclerView.setAdapter(adapter);
+
+        // ユーザー登録画面に遷移
+        binding.buttonMenu3.setOnClickListener(view -> {
+            var intent = new Intent(this, UserRegistration.class);
+            startActivity(intent);
+        });
+
+        // 検索画面に遷移
+        binding.buttonMenu4.setOnClickListener(view -> {
+            var intent = new Intent(this, SearchResult.class);
+            startActivity(intent);
+        });
+
+        // 投稿作成画面に遷移
+        binding.buttonMenu5.setOnClickListener(view -> {
+            var intent = new Intent(this, CreatePost.class);
+            startActivity(intent);
+        });
+
+        // 戻る
+        binding.buttonMenu1.setOnClickListener(view -> {
+            finish();
+        });
     }
 }
